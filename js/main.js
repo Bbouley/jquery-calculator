@@ -1,12 +1,18 @@
 $(document).ready(function(){
 
-  var $buttons = $('.operator');
+  var $operator = $('.operator:not(#cancel, #calc)');
 
-  $buttons.on('click', function(){
-    $(this).css('background', 'red');
-  });
+  var $divide = $('.operator:nth-child(2)').html();
+  var $multiply = $('.operator:nth-child(3)').html();
+  var $subtract = $('.operator:nth-child(7)').html();
+  var $add = $('.operator:nth-child(11)').html();
 
   var $numbers = $('span:not(.operator)');
+
+  $operator.on('click', function(){
+    $('#screen').append('x');
+
+});
 
   $numbers.on('click', function(){
     var numClicked = $(this).html();
@@ -26,5 +32,9 @@ $(document).ready(function(){
 
   function makeNumber(string){
     var calcString = string;
-    console.log(Number(calcString));
+    return Number(calcString);
+  }
+
+  function divide(number1, number2){
+    var answer = number1/number2;
   }
