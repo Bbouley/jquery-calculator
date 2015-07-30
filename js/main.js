@@ -52,7 +52,7 @@ $(document).ready(function(){
     var $screenString = $('#screen').html();
     var $secondNum = $screenString.split(/\u00F7|x|-|\+/);
     $number2 = parseInt($secondNum[1]);
-    $screenString;
+    $('#screen').html();
 
       if ($action ==='/'){
         var answer = divide($number1, $number2);
@@ -106,7 +106,7 @@ $(document).ready(function(){
   }
 
   function subtract(number1, number2){
-    var answer = number1 + number2;
+    var answer = number1 - number2;
     return answer.toFixed(4);
   }
 
